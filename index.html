@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto; min-height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT microsystems - Supercharging Progress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .bg-light-cyan {
+            background-color: #B8E5E8;
+        }
+        .bg-hcl-blue {
+            background-color: #0066CC;
+        }
+        .text-hcl-blue {
+            color: #0066CC;
+        }
+        .text-purple-link {
+            color: #6B46C1;
+        }
+        .bg-purple-btn {
+            background-color: #6B2D9E;
+        }
+        .bg-purple-btn:hover {
+            background-color: #5A2685;
+        }
+        .bg-lavender {
+            background-color: #E8DFF5;
+        }
+        .gradient-wave {
+            background: linear-gradient(135deg, #4DD0E1 0%, #9C27B0 100%);
+        }
+        .gradient-purple-blue {
+            background: linear-gradient(135deg, #7B2CBF 0%, #5E60CE 50%, #4EA8DE 100%);
+        }
+        .gradient-light-blue {
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4E9F7 100%);
+        }
+        .search-icon-bg {
+            background-color: #E8D5F5;
+        }
+        .suggestion-pill {
+            background-color: #F5F5F5;
+            border: 1px solid #E0E0E0;
+        }
+        .suggestion-pill:hover {
+            border-color: #6B46C1;
+            color: #6B46C1;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            color: #6B46C1;
+        }
+        .nav-link {
+            color: #333333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #6B46C1;
+        }
+        .quote-mark {
+            font-size: 80px;
+            line-height: 1;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .progress-bar {
+            height: 3px;
+            background: linear-gradient(to right, #E0E0E0 0%, #E0E0E0 40%, #8B5CF6 40%, #8B5CF6 70%, #E0E0E0 70%, #E0E0E0 100%);
+        }
+    </style>
+</head>
+<body class="bg-white" style="height: auto; min-height: 100%;">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="https://satmz.com/wp-content/uploads/2023/03/main_logo.png" alt="SAT microsystems" class="h-12">
+                </div>
+
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <div class="flex items-center space-x-1 nav-link cursor-pointer">
+                        <span>Capabilities</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center space-x-1 nav-link cursor-pointer">
+                        <span>Industries</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                    <a href="#" class="nav-link">Ecosystem</a>
+                    <div class="flex items-center space-x-1 nav-link cursor-pointer">
+                        <span>Who We Are</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center space-x-1 nav-link cursor-pointer">
+                        <span>Resources</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                    <div class="flex items-center space-x-1 nav-link cursor-pointer">
+                        <span>Careers</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                </nav>
+
+                <div class="flex items-center space-x-3">
+                    <button class="p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="sun" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                    <button class="flex items-center space-x-1 p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="globe" class="w-5 h-5 text-gray-600"></i>
+                        <span class="text-sm font-medium text-gray-700">En</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="lg:hidden p-2 hover:bg-gray-100 rounded-full">
+                        <i data-lucide="menu" class="w-6 h-6 text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with AI Search -->
+    <section class="bg-light-cyan py-16 lg:py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-lg p-10 lg:p-16">
+                <div class="text-center">
+                    <h1 class="text-3xl lg:text-4xl font-normal text-gray-900 mb-2">Have tech questions?</h1>
+                    <h2 class="text-3xl lg:text-4xl font-normal text-gray-900 mb-10">
+                        Our <span class="text-hcl-blue font-medium">AI answer engine</span> can help.
+                    </h2>
+
+                    <div class="max-w-3xl mx-auto mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <div class="w-10 h-10 rounded-full search-icon-bg flex items-center justify-center">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-purple-600"></i>
+                                </div>
+                            </div>
+                            <input 
+                                type="text" 
+                                placeholder="Please ask a question or initiate a search"
+                                class="w-full pl-16 pr-16 py-4 text-base bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            >
+                            <div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+                                <button class="bg-purple-btn p-3 rounded-lg text-white hover:bg-purple-700 transition-colors">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center items-center gap-3 text-sm">
+                        <span class="text-gray-600 font-medium">Suggestions</span>
+                        <button class="suggestion-pill px-4 py-2 rounded-full hover:shadow-sm transition-all flex items-center space-x-1">
+                            <span class="text-gray-700">What services does SAT microsystems offer in Cloud Migration?</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-hcl-blue"></i>
+                        </button>
+                        <button class="suggestion-pill px-4 py-2 rounded-full hover:shadow-sm transition-all flex items-center space-x-1">
+                            <span class="text-gray-700">What services does SAT microsystems offer in Cybersecurity?</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-hcl-blue"></i>
+                        </button>
+                        <button class="suggestion-pill px-4 py-2 rounded-full hover:shadow-sm transition-all flex items-center space-x-1">
+                            <span class="text-gray-700">Generative AI trends for 2025</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-hcl-blue"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Announcement with Gradient -->
+    <section class="bg-light-cyan pb-16 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 p-12 lg:p-20 flex flex-col justify-center relative min-h-[600px]">
+                        <div class="absolute bottom-8 left-8 flex space-x-4 text-sm">
+                            <button class="text-gray-400 hover:text-gray-600 pb-2 border-b-2 border-transparent">HPE TS Acquisition</button>
+                            <button class="text-gray-400 hover:text-gray-600 pb-2 border-b-2 border-transparent">AWS FS Partnership</button>
+                            <button class="text-gray-900 font-semibold pb-2 border-b-2 border-gray-900">Recognized by Kantar</button>
+                            <button class="p-2 hover:bg-gray-100 rounded">
+                                <i data-lucide="pause" class="w-4 h-4 text-gray-600"></i>
+                            </button>
+                        </div>
+                        <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+                            SAT microsystems Named Fastest-growing Tech Services Brand
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Among India's Top 10 by Kantar BrandZ 2025
+                        </p>
+                        <div>
+                            <button class="bg-purple-btn text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2 hover:bg-purple-700 transition-colors">
+                                <span>Learn more</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 h-[400px] lg:h-auto relative overflow-hidden">
+                        <div class="absolute inset-0 gradient-wave"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full">
+                                <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(156, 39, 176, 0.3) 0%, transparent 70%);"></div>
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#4DD0E1;stop-opacity:0.8" />
+                                            <stop offset="50%" style="stop-color:#7B68EE;stop-opacity:0.9" />
+                                            <stop offset="100%" style="stop-color:#9C27B0;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M 0,300 Q 200,200 400,300 T 800,300 L 800,600 L 0,600 Z" fill="url(#waveGradient)" opacity="0.6">
+                                        <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                                            values="M 0,300 Q 200,200 400,300 T 800,300 L 800,600 L 0,600 Z;
+                                                    M 0,300 Q 200,400 400,300 T 800,300 L 800,600 L 0,600 Z;
+                                                    M 0,300 Q 200,200 400,300 T 800,300 L 800,600 L 0,600 Z"/>
+                                    </path>
+                                    <path d="M 0,350 Q 200,250 400,350 T 800,350 L 800,600 L 0,600 Z" fill="url(#waveGradient)" opacity="0.4">
+                                        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                                            values="M 0,350 Q 200,250 400,350 T 800,350 L 800,600 L 0,600 Z;
+                                                    M 0,350 Q 200,450 400,350 T 800,350 L 800,600 L 0,600 Z;
+                                                    M 0,350 Q 200,250 400,350 T 800,350 L 800,600 L 0,600 Z"/>
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10">Latest News</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Abstract blue waves" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-3">Business Today | December 24, 2025</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 leading-tight">
+                            SAT microsystems to acquire business intelligence platform Jaspersoft for $240 million
+                        </h3>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Modern building entrance" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-3">Mint | December 23, 2025</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 leading-tight">
+                            SAT microsystems spends $400 million on acquisitions in a week as it bets on improving AI, data offerings
+                        </h3>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Office building exterior" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-3">Business Standard | December 18, 2025</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 leading-tight">
+                            SAT microsystems buys telco solutions business from HPE for nearly $160 million
+                        </h3>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Trends and Insights -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10">Featured Trends and Insights</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Abstract light trails" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-3">Article | December 22, 2025</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                            Looking ahead to an autonomous, intelligent and hyper-personal future for financial services in 2026
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                            AI-powered global capability centers, autonomous banking, intelligent decisioning and hyper-personalized agentic customer experiences — four powerful trends set to redefine financial services in 2026
+                        </p>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 card-hover">
+                    <div class="h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Person working at computer" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-gray-500 mb-3">Article | December 4, 2025</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                            The future of contact centers: A strategic experience platform
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                            Contact centers are rapidly evolving from cost-focused call hubs into AI-powered strategic experience platforms
+                        </p>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                            <i data-lucide="arrow-right" class="arrow-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="h-56 overflow-hidden relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Sunset mountain landscape" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-semibold text-gray-700 mb-2">Event</div>
+                        <div class="text-xs text-gray-600 mb-3">April 20-22 | Las Vegas</div>
+                        <h3 class="text-lg font-bold text-hcl-blue mb-5 leading-tight">
+                            Adobe Summit 2026 - The Digital Experience Conference
+                        </h3>
+                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-blue-200 hover:border-blue-600 hover:bg-blue-50 transition-all">
+                            <i data-lucide="arrow-right" class="w-5 h-5 text-hcl-blue"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex space-x-2">
+                    <button class="p-2 border border-gray-300 rounded hover:bg-gray-50 transition-colors">
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 border border-gray-300 rounded hover:bg-gray-50 transition-colors">
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-gray-600"></i>
+                    </button>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="#" class="inline-flex items-center text-gray-700 font-medium hover:text-purple-600 transition-colors">
+                        Explore more trends
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center text-gray-700 font-medium hover:text-purple-600 transition-colors">
+                        See all events
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Purpose Section -->
+    <section class="py-16 gradient-light-blue">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Our Purpose</h2>
+                <p class="text-2xl lg:text-3xl text-gray-900 leading-relaxed max-w-5xl mx-auto">
+                    To bring together the best of technology and our people to <span class="font-semibold">supercharge progress.</span>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-5/12 lg:h-[650px]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="CEO Portrait" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div class="lg:w-7/12 p-10 lg:p-16 flex flex-col justify-center">
+                        <div class="quote-mark mb-6">"</div>
+                        <p class="text-xl lg:text-2xl text-gray-900 mb-8 leading-relaxed">
+                            We look forward to supercharging our growth with optimism and confidence, ready to seize the many opportunities ahead. Our growth strategy for the emerging digital and AI future is built on five strategic objectives."
+                        </p>
+                        <a href="#" class="inline-flex items-center text-purple-600 font-semibold text-lg mb-8 hover:text-purple-700 transition-colors">
+                            Our five strategic objectives
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-1">C Vijayakumar</h3>
+                            <p class="text-base text-gray-600">CEO & Managing Director | SAT microsystems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards and Recognitions -->
+    <section class="py-16 gradient-purple-blue">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 text-white">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-10">Awards and Recognitions</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="pb-6 border-b border-white border-opacity-30">
+                            <p class="text-base lg:text-lg leading-relaxed">
+                                SAT microsystems recognized as a Customers' Choice in 2025 Gartner® Peer Insights™ Voice of the Customer for Managed Network Services
+                            </p>
+                        </div>
+                        <div class="pb-6 border-b border-white border-opacity-30">
+                            <p class="text-base lg:text-lg leading-relaxed">
+                                SAT microsystems recognized as Customers' Choice in 2025 Gartner Peer Insights for Public Cloud IT Transformation Services
+                            </p>
+                        </div>
+                        <div class="pb-6 border-b border-white border-opacity-30">
+                            <p class="text-base lg:text-lg leading-relaxed">
+                                SAT microsystems positioned as a Leader in The Forrester Wave™: Oracle Services, Q1 2025
+                            </p>
+                        </div>
+                        <div class="pb-6 border-b border-white border-opacity-30">
+                            <p class="text-base lg:text-lg leading-relaxed">
+                                SAT microsystems positioned as a Leader in IDC MarketScape: Worldwide SAP Implementation Services 2025 Vendor Assessment
+                            </p>
+                        </div>
+                        <div class="pb-6">
+                            <p class="text-base lg:text-lg leading-relaxed">
+                                SAT microsystems positioned as a Market Leader in HFS Horizons: Generative Enterprise Services, 2025 report
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="#" class="inline-flex items-center text-white font-semibold text-lg hover:opacity-80 transition-opacity">
+                            See more recognitions
+                            <i data-lucide="chevron-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <img 
+                        src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        alt="Ice climber" 
+                        class="w-full h-auto rounded-2xl shadow-2xl"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Areas of Expertise -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Areas of Expertise</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                    With expertise in AI, Cloud and Engineering, we deliver solutions that fulfill the traditional, transformational and future needs of clients across the globe.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="mb-6">
+                        <svg class="w-20 h-20" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="30" r="12" stroke="#0066CC" stroke-width="2.5" fill="none"/>
+                            <circle cx="40" cy="30" r="4" fill="#0066CC"/>
+                            <path d="M40 42 L40 60" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M32 60 L48 60" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 60 L40 68" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 68 L45 73" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI</h3>
+                    <p class="text-base text-gray-600 mb-6 leading-relaxed">
+                        SAT microsystems empowers organizations across industries to identify and seize opportunities to leverage AI and GenAI to automate and accelerate business processes.
+                    </p>
+                    <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                        <i data-lucide="arrow-right" class="arrow-icon"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="mb-6">
+                        <svg class="w-20 h-20" viewBox="0 0 80 80" fill="none">
+                            <path d="M25 35 Q25 25 35 25 L45 25 Q55 25 55 35 L55 45 Q55 55 45 55 L35 55 Q25 55 25 45 Z" stroke="#0066CC" stroke-width="2.5" fill="none"/>
+                            <path d="M55 40 L70 40" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M65 35 L70 40 L65 45" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cloud</h3>
+                    <p class="text-base text-gray-600 mb-6 leading-relaxed">
+                        SAT microsystems' exclusive CloudSMART offerings and services enable organizations to optimize cloud to accelerate innovation and agility at scale.
+                    </p>
+                    <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                        <i data-lucide="arrow-right" class="arrow-icon"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="mb-6">
+                        <svg class="w-20 h-20" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="20" stroke="#0066CC" stroke-width="2.5" fill="none"/>
+                            <circle cx="40" cy="40" r="12" stroke="#0066CC" stroke-width="2.5" fill="none"/>
+                            <path d="M40 20 L40 28" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M40 52 L40 60" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M35 35 L40 40 L45 35" stroke="#6B2D9E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Engineering</h3>
+                    <p class="text-base text-gray-600 mb-6 leading-relaxed">
+                        SAT microsystems Engineering and R&D services (ERS) empower enterprises to improve time-to-profit, accelerate product development and maximize return on innovation.
+                    </p>
+                    <div class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-gray-200 hover:border-purple-600 hover:bg-purple-50 transition-all">
+                        <i data-lucide="arrow-right" class="arrow-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Clients - UPDATED SECTION -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet Our Clients</h2>
+                <p class="text-lg text-gray-600 max-w-4xl">
+                    We deliver industry-leading capabilities to clients across all major verticals, including financial services, manufacturing, technology services, telecom and media, retail and CPG, life sciences and healthcare and public services.
+                </p>
+            </div>
+
+            <!-- Client Cards Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Broadcom Inc. Card -->
+                <div class="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row" style="box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+                    <div class="bg-lavender p-6 lg:w-1/2 flex flex-col justify-between min-h-[220px]">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Broadcom Inc.</h3>
+                            <div class="w-12 h-0.5 bg-gray-900 mb-4"></div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-1">Stanley Toh</h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Head of Enterprise<br>
+                                End-user Services & Experience
+                            </p>
+                        </div>
+                        <button class="inline-flex items-center px-5 py-2 bg-purple-200 text-purple-700 rounded-md font-semibold hover:bg-purple-300 transition-colors w-fit mt-4">
+                            <i data-lucide="play" class="w-4 h-4 mr-1"></i>
+                            Watch
+                        </button>
+                    </div>
+                    <div class="lg:w-1/2 h-48 lg:h-[220px] bg-gray-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Stanley Toh" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </div>
+                </div>
+
+                <!-- NatWest Group Card -->
+                <div class="bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row" style="box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+                    <div class="bg-lavender p-6 lg:w-1/2 flex flex-col justify-between min-h-[220px]">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">NatWest Group</h3>
+                            <div class="w-12 h-0.5 bg-gray-900 mb-4"></div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-1">Wendy Redshaw</h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Chief Digital Information Officer,<br>
+                                Retail Banking
+                            </p>
+                        </div>
+                        <button class="inline-flex items-center px-5 py-2 bg-purple-200 text-purple-700 rounded-md font-semibold hover:bg-purple-300 transition-colors w-fit mt-4">
+                            <i data-lucide="play" class="w-4 h-4 mr-1"></i>
+                            Watch
+                        </button>
+                    </div>
+                    <div class="lg:w-1/2 h-48 lg:h-[220px] bg-gray-200">
+                        <img 
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Wendy Redshaw" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex items-center justify-start space-x-2 mb-4">
+                <button class="p-2.5 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    <i data-lucide="chevron-left" class="w-4 h-4 text-gray-700"></i>
+                </button>
+                <button class="p-2.5 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-700"></i>
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="max-w-lg">
+                <div class="progress-bar rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 gradient-light-blue">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 text-center">Testimonials</h2>
+
+            <div class="bg-white rounded-3xl p-10 lg:p-16 shadow-lg">
+                <div class="quote-mark mb-6">"</div>
+                <p class="text-xl lg:text-2xl text-gray-900 mb-10 leading-relaxed">
+                    "SAT microsystems helped us do the integration of our acquired businesses, not only faster but also better and cheaper. They have been a <span class="font-bold">trusted and transparent partner who has always been willing to travel fast!</span>"
+                </p>
+                <div class="flex items-center space-x-4">
+                    <img 
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                        alt="Andy Nallappan" 
+                        class="w-16 h-16 rounded-lg object-cover"
+                    >
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900">Andy Nallappan</h4>
+                        <p class="text-base text-gray-600">Former CTO and Head of Software Business Operations, Broadcom Software</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center space-x-4 mt-8">
+                <button class="p-3 bg-white rounded-lg shadow hover:shadow-md transition-all">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-gray-600"></i>
+                </button>
+                <div class="flex space-x-2">
+                    <div class="w-24 h-1 bg-gray-300 rounded"></div>
+                    <div class="w-24 h-1 bg-purple-600 rounded"></div>
+                    <div class="w-24 h-1 bg-gray-300 rounded"></div>
+                </div>
+                <button class="p-3 bg-white rounded-lg shadow hover:shadow-md transition-all">
+                    <i data-lucide="chevron-right" class="w-6 h-6 text-gray-600"></i>
+                </button>
+                <button class="p-3 bg-white rounded-lg shadow hover:shadow-md transition-all">
+                    <i data-lucide="pause" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10">Careers</h2>
+
+            <div class="bg-gradient-to-r from-blue-100 to-blue-200 rounded-3xl overflow-hidden shadow-lg">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+                        <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                            Careers at SAT microsystems
+                        </h3>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            We invite you to supercharge your potential. Find what inspires and drives you. Find your spark.
+                        </p>
+                        <div>
+                            <button class="bg-purple-btn text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2 hover:bg-purple-700 transition-colors">
+                                <span>Explore careers</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 h-60 lg:h-[600px]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Professional woman smiling" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="gradient-purple-blue py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-white">
+                    <div class="text-4xl font-bold mb-2">SAT microsystems</div>
+                    <div class="text-xl">Supercharging Progress™</div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-purple-700 transition-all inline-flex items-center justify-center">
+                        Contact us
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </button>
+                    <button class="px-8 py-3 bg-white text-purple-700 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center">
+                        Subscribe
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Navigation -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-8">
+                <a href="#" class="text-base hover:text-gray-300 transition-colors">Home</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Capabilities</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">AI & Generative AI</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Cloud</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Engineering</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Software</a></li>
+                    </ul>
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-3 text-sm">More Capabilities</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Business Process Operations</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Cybersecurity</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Data and AI</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Digital Design and Manufacturing Services</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Digital Engineering</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Digital Workplace</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">EdTech</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Enterprise Applications Transformation</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Enterprise Platforms and Edge Services</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Enterprise Transformation Advisory</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Global Capability Center (GCC)</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Intelligent Operations</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Modern Applications</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Networks</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Operational Technology</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Physical AI and AIoT</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Product Engineering</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Supply Chain</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Unified Service Management (USM)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Industries</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Aerospace and Defense</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Automotive</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Banking</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Capital Markets</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Consumer Goods</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Energy and Utilities</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Financial Crime Compliance and Risk</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Financial Services</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Fintech</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Life Sciences and Healthcare</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Manufacturing</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Mining and Natural Resources</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Oil and Gas</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Private Equity</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Public Sector</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Retail</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Technology</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Telecom Media and Entertainment Services</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Travel, Transport, Logistics & Hospitality</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Ecosystem</h3>
+                    
+                    <div class="mt-6">
+                        <h3 class="text-lg font-bold mb-4">Who We Are</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Analyst Recognitions</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Annual Report 2025</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Awards and Recognition</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Code of Business Ethics and Conduct</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Corporate Social Responsibility</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Diversity & Inclusion</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Global Presence</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Investor Relations</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Leadership</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Newsroom</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Privacy Trust Center</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Strategic Alliances</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Sustainability</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6">
+                        <h3 class="text-lg font-bold mb-4">Resources</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Trends and Insights</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Events and Webinars</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Careers</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Careers Overview</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Meet our people</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Explore job opportunities</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Careers by LoB</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Americas</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Asia Pacific</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">Europe and Africa</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition-colors">India</a></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <h3 class="text-lg font-bold mb-4">Global Presence</h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">Americas</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">EMEA</a></li>
+                            <li><a href="#" class="hover:text-gray-300 transition-colors">APAC</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="TRUSTe" class="h-12">
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center space-x-2 px-4 py-2 border border-gray-700 rounded-lg">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                        <span class="text-sm">English</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center text-sm text-gray-400">
+                    <p class="mb-2">Copyright © 2026 SAT microsystems Limited</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="hover:text-gray-300 transition-colors">Contact Us</a>
+                        <span>/</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Disclaimer</a>
+                        <span>/</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Privacy Statement</a>
+                        <span>/</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Terms of use</a>
+                        <span>/</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Sitemap</a>
+                        <span>/</span>
+                        <a href="#" class="hover:text-gray-300 transition-colors">Raise a Grievance</a>
+                    </div>
+                    <p class="mt-4">
+                        We use cookies on our site. Please read more about <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">cookies policy</a> here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
