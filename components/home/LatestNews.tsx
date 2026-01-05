@@ -1,29 +1,33 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function LatestNews() {
   const newsItems = [
     {
-      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Abstract blue waves",
-      source: "Business Today",
-      date: "December 24, 2025",
-      title: "SAT microsystems to acquire business intelligence platform Jaspersoft for $240 million"
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      alt: "Cybersecurity concept",
+      source: "Arab News",
+      date: "January 2026",
+      title: "Saudi cybersecurity sector adds $4.9bn to GDP",
+      link: "https://www.arabnews.com/node/2601856/business-economy"
     },
     {
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Modern building entrance",
-      source: "Mint",
-      date: "December 23, 2025",
-      title: "SAT microsystems spends $400 million on acquisitions in a week as it bets on improving AI, data offerings"
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      alt: "Cybersecurity market",
+      source: "Saudi Gazette",
+      date: "January 2026",
+      title: "Saudi cybersecurity market hits SR15.2 billion in 2024, NCA report shows",
+      link: "https://saudigazette.com.sa/article/655064"
     },
     {
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Office building exterior",
-      source: "Business Standard",
-      date: "December 18, 2025",
-      title: "SAT microsystems buys telco solutions business from HPE for nearly $160 million"
+      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      alt: "AI cyber threats",
+      source: "Arab News",
+      date: "January 2026",
+      title: "Over 60% of Saudi firms highly aware of AI-driven cyber threats: Cisco Index",
+      link: "https://www.arabnews.com/node/2623860"
     }
   ]
 
@@ -34,7 +38,13 @@ export default function LatestNews() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
-            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover">
+            <Link
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 card-hover block"
+            >
               <div className="h-56 overflow-hidden">
                 <img 
                   src={item.image}
@@ -51,7 +61,7 @@ export default function LatestNews() {
                   <ArrowRight className="arrow-icon" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
